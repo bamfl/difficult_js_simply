@@ -1,20 +1,20 @@
 // Урок 1. JavaScript. Что такое prototype. JavaScript Prototype (English Subs)
 // У обычного объекта есть св-во __proto__: Object, в к-ом доступны св-ва и методп объекта-прототипа, например .toString()
-const persone = {
-	name: 'Dmitriy',
-	age: 26,
-	greet() {
-		console.log('Greeting you!');
-	}
+const person = {
+  name: 'Dmitriy',
+  age: 26,
+  greet() {
+    console.log('Greeting you!');
+  }
 };
 
 // т.е. под капотом происходит создание экземплера класса Object:
 const persone1 = new Object({
-	name: 'Dmitriy',
-	age: 26,
-	greet() {
-		console.log('Greeting you!');
-	}
+  name: 'Dmitriy',
+  age: 26,
+  greet() {
+    console.log('Greeting you!');
+  }
 });
 
 // Этот __proto__: Object можно получить, обратившись к классу Object.prototype
@@ -24,10 +24,12 @@ console.log(persone1.__proto__ === Object.prototype);
 
 // В прототип класса Object можно записывать новые св-ва и методы, к-ые будут наследоваться новыми экземплярами объектов:
 Object.prototype.myProps = 'myValue';
-Object.prototype.sayHello = function() {console.log('Hello!');}
+Object.prototype.sayHello = function () {
+  console.log('Hello!');
+}
 
 // Создать новый экзмпляр выбрав родительский объект:
-const masha = Object.create(persone); // у него в __proto__: Object будут все св-ва родителя person, а у него в __proto__: Object будут все св-ва родителя-класса Object
+const masha = Object.create(person); // у него в __proto__: Object будут все св-ва родителя person, а у него в __proto__: Object будут все св-ва родителя-класса Object
 masha.name = "Maria";
 
 // Создание строки
