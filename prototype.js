@@ -1,5 +1,5 @@
 // Урок 1. JavaScript. Что такое prototype. JavaScript Prototype (English Subs)
-// У обычного объекта есть св-во __proto__: Object, в к-ом доступны св-ва и методп объекта-прототипа, например toString
+// У обычного объекта есть св-во __proto__: Object, в к-ом доступны св-ва и методп объекта-прототипа, например .toString()
 const persone = {
 	name: 'Dmitriy',
 	age: 26,
@@ -19,6 +19,8 @@ const persone1 = new Object({
 
 // Этот __proto__: Object можно получить, обратившись к классу Object.prototype
 console.log(Object.prototype);
+console.log(persone1.__proto__);
+console.log(persone1.__proto__ === Object.prototype);
 
 // В прототип класса Object можно записывать новые св-ва и методы, к-ые будут наследоваться новыми экземплярами объектов:
 Object.prototype.myProps = 'myValue';
