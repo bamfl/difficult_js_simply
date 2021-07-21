@@ -26,7 +26,7 @@ console.log(persone1.__proto__ === Object.prototype);
 Object.prototype.myProps = 'myValue';
 Object.prototype.sayHello = function () {
   console.log('Hello!');
-}
+};
 
 // Создать новый экзмпляр выбрав родительский объект:
 const masha = Object.create(person); // у него в __proto__: Object будут все св-ва родителя person, а у него в __proto__: Object будут все св-ва родителя-класса Object
